@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY =os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['https://social1-opxf.onrender.com','localhost']
 
@@ -85,8 +85,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-database_url=os.environ.get("DATABASE_URL")
-DATABASES['default']=dj_database_url.parse(database_url)
+#database_url=os.environ.get("DATABASE_URL")
+DATABASES['default']=dj_database_url.parse("postgresql://hospital_render_user:XFmHRBkTcMjQI9AILSLcFkESPg0wtvu5@dpg-ctt1189opnds73c8qq1g-a.oregon-postgres.render.com/hospital_render")
 
 
 # Password validation
